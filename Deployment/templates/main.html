@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>H8 Model Deployment</title>
+</head>
+<body>
+    <div class="form">
+        <form action="{{url_for('predict')}}" method="post">
+        <img src="{{url_for('static',filename ='src/hacktiv-logo.png')}}" width ="180px" height="100px" alt="">
+        <h1>Credit Card Prediction</h1>
+        <input type="text" name="BALANCE" placeholder="Balance" required="required" />
+        <input type="text" name="BALANCE_FREQUENCY" placeholder="Balance Frequency" required="required" /> 
+        <input type="text" name="PURCHASES" placeholder="Purchases" required="required" />
+        <input type="text" name="INSTALLMENTS_PURCHASES" placeholder="Installments Purchases" required="required" />
+        <input type="text" name="CASH_ADVANCE" placeholder="Cash Advance" required="required" />
+        <input type="text" name="PURCHASES_FREQUENCY" placeholder="Purchases Frequency" required="required" />
+        <input type="text" name="ONEOFF_PURCHASES_FREQUENCY" placeholder="On Off Purchases Frequency" required="required" />
+        <input type="text" name="CASH_ADVANCE_FREQUENCY" placeholder="Cash Advance Frequency" required="required" />
+        <input type="text" name="PURCHASES_TRX" placeholder="Purchases TRX" required="required" />
+        <input type="text" name="CREDIT_LIMIT" placeholder="Credit Limit" required="required" />
+        <input type="text" name="PAYMENTS" placeholder="Payments" required="required" />
+        <input type="text" name="MINIMUM_PAYMENTS" placeholder="Minimum Payments" required="required" />
+        <input type="text" name="PRC_FULL_PAYMENT" placeholder="PRC Full Payment" required="required" />
+        <input type="text" name="TENURE" placeholder="Tenure" required="required" />
+
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <p class="message">{{ prediction_text }}</p>
+        </form>
+
+    </div>
+
+</body>
+</html>
